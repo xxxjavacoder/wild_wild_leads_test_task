@@ -1,13 +1,14 @@
 <template>
-    <div
-      class="red-circle"
-      :class="{ 'hovered': isHovered }"
-      :style="{ top: y + 'px', left: x + 'px' }"
-      @mousemove="handleMouseMove"
-    ></div>
-  </template>
+  <div
+    class="red-circle"
+    :class="{ 'hovered': isHovered }"
+    :style="{ top: y + 'px', left: x + 'px' }"
+    @mousemove="handleMouseMove"
+  ></div>
+</template>
   
-  <script>
+<script>
+
   export default {
     data() {
       return {
@@ -29,9 +30,11 @@
       }
     }
   };
-  </script>
+
+</script>
   
-  <style>
+<style>
+
   .red-circle {
     width: 25px;
     height: 25px;
@@ -42,5 +45,6 @@
     transition: 0.5s ease;
     z-index: 1000;
   }
-  </style>
+
+</style>
   

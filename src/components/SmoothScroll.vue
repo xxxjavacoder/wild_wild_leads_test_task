@@ -8,7 +8,7 @@
 export default {
     data() {
     return {
-      scrollSpeed: 0.5, // Швидкість прокрутки. Значення від 0 до 1, де 1 - повна швидкість, 0.5 - половина швидкості
+      scrollSpeed: 0.5,
       scrollContainer: null,
       scrollY: 0
     };
@@ -31,10 +31,8 @@ export default {
 
       const scrollAmount = deltaY * this.scrollSpeed;
 
-      // Здійснюємо прокрутку у протилежному напрямку
       this.scrollY -= scrollAmount;
 
-      // Обмежуємо прокрутку до меж контейнера
       const maxScrollHeight = this.scrollContainer.scrollHeight - this.scrollContainer.clientHeight;
       this.scrollY = Math.max(0, Math.min(this.scrollY, maxScrollHeight));
     }

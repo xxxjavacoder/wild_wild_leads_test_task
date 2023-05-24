@@ -1,11 +1,12 @@
 <template>
-    <div class="loading-screen">
-        <img class="loading-img" src="../assets/loader.png" alt="Loader">
-        <div class="loading-line"></div>
-    </div>
-  </template>
+  <div class="loading-screen">
+      <img class="loading-img" src="../assets/loader.png" alt="Loader">
+      <div class="loading-line"></div>
+  </div>
+</template>
   
-  <style>
+<style>
+
   .loading-screen {
     z-index: 9999;
     position: fixed;
@@ -40,5 +41,6 @@
         width: 300px;
     }
   }
-  </style>
+
+</style>
   

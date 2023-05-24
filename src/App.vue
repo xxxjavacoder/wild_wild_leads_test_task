@@ -120,12 +120,12 @@ export default {
   },
   data() {
     return {
-      isLoading: true, // Змінна, яка вказує, чи показувати екран завантаження
+      isLoading: true,
     };
   },
   created() {
     setTimeout(() => {
-      this.isLoading = false; // Змінюємо значення на false після 5 секунд
+      this.isLoading = false;
     }, 3000);
   }
 }
