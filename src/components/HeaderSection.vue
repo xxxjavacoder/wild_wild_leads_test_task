@@ -9,14 +9,14 @@
                     <div class="line-3 line" />
                 </div>
                 <div class="header__btn-wrapper">
-                    <button class="header__btn-consult">
+                    <div class="header__btn-consult">
                         Консультація
-                    </button>
-                        <div class="header__lang-text">
-                            <span>
-                                RU
-                            </span>
-                        </div>
+                    </div>
+                    <div class="header__lang-text">
+                        <span>
+                            RU
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="header__block">
@@ -47,12 +47,19 @@
                         </a>
                     </li>
                 </ul>
-                <h1 class="header__title-block">
+                <h1 class="header__title-block animate__backInUp animate__delay-5s">
                     ПРОДАЮЩИЕ САЙТЫ С
                     <span class="color-red">
                         ВЫСОКОЙ КОНВЕРСИЕЙ
                     </span>
                 </h1>
+                <div class="contact_btn">
+                    <div class="contact_btn__second-border"></div>
+                    <div class="contact_btn__block">
+                        <img class="contact_btn__img" src="../assets/call.svg" alt="Call">
+                        <span class="contact_btn__text">Кнопка связи</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -157,6 +164,7 @@
 
     &__block {
         display: grid;
+        align-items: center;
         grid-template-columns: minmax(100px,150px) 1fr minmax(100px,150px);
         justify-content: center;
         grid-gap: 1rem;
@@ -187,12 +195,58 @@
 
     &__title-block {
         font-size: 3.5vw;
-        padding: 10rem 0;
         text-align: center;
 
         span {
             display: inline-block;
         }
+    }
+}
+
+.contact_btn {
+    position: relative;
+
+    &__second-border {
+        position: absolute;
+        background-color: #EB3846;
+        box-shadow: 17.716px 17.716px 70.8639px rgba(0,0,0,.6), 13px -12px 35px -10px rgba(235,56,70,.7);
+        top: -2px;
+        right: -2px;
+        width: 90px;
+        height: 75px;
+        border-radius: 30px;
+        z-index: 1;
+    }
+
+    &:hover {
+        .contact_btn__second-border {
+            cursor: pointer;
+            background-color: #FED215;
+            box-shadow: 17.716px 17.716px 70.8639px rgba(0,0,0,.6), 13px -12px 35px -10px #FED215;
+        }
+    }
+
+    &__block {
+        position: relative;
+        background: linear-gradient(318.96deg, rgba(0, 0, 0, 0.4) -1.9%, rgba(36, 36, 36, 0.4) 105%), #2A2929;
+        border-radius: 30px;
+        border: 3px #000 solid;
+        height: 120px;
+        z-index: 2;
+    }
+
+    &__text {
+        display: block;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 13px;
+        text-align: center;
+        color: #C3C1C1;
+    }
+
+    &__img {
+        display: block;
+        margin: 26px auto 13px auto;
     }
 }
 
