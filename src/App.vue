@@ -103,12 +103,14 @@
   <LoadingScreen v-if="isLoading"></LoadingScreen>
   <red-circle></red-circle>
   <HeaderSection></HeaderSection>
+  <InformationSection></InformationSection>
 </template>
 
 <script>
 import HeaderSection from './components/HeaderSection.vue';
 import RedCircle from './components/RedCircle.vue';
 import LoadingScreen from './components/LoadingScreen.vue';
+import InformationSection from './components/InformationSection.vue';
 
 
 export default {
@@ -116,7 +118,8 @@ export default {
   components: {
     LoadingScreen,
     HeaderSection,
-    RedCircle
+    RedCircle,
+	InformationSection
   },
   data() {
     return {
@@ -147,6 +150,24 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.mini-title {
+	display: block;
+	font-size: 16px;
+	line-height: 24px;
+	text-transform: uppercase;
+
+	&--text-center {
+		text-align: center;
+	}
+}
+
+.center-text {
+	display: block;
+	font-size: 30px;
+	line-height: 44px;
+	padding: 4rem 0;
 }
 
 .color-white {
