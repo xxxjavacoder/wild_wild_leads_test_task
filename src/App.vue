@@ -103,14 +103,14 @@
   <LoadingScreen v-if="isLoading"></LoadingScreen>
   <red-circle></red-circle>
   <HeaderSection></HeaderSection>
-  <InformationSection></InformationSection>
+  <eComerce></eComerce>
 </template>
 
 <script>
 import HeaderSection from './components/HeaderSection.vue';
-import RedCircle from './components/RedCircle.vue';
-import LoadingScreen from './components/LoadingScreen.vue';
-import InformationSection from './components/InformationSection.vue';
+import RedCircle from './components/partials/RedCircle.vue';
+import LoadingScreen from './components/partials/LoadingScreen.vue';
+import eComerce from './components/eComerce.vue';
 
 
 export default {
@@ -119,7 +119,7 @@ export default {
     LoadingScreen,
     HeaderSection,
     RedCircle,
-	InformationSection
+	eComerce
   },
   data() {
     return {

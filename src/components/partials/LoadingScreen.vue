@@ -1,6 +1,6 @@
 <template>
   <div class="loading-screen">
-      <img class="loading-img" src="../assets/loader.png" alt="Loader">
+      <img class="loading-img" src="../../assets/loader.png" alt="Loader">
       <div class="loading-line"></div>
   </div>
 </template>
@@ -41,6 +41,5 @@
         width: 300px;
     }
   }
-
 </style>
   
