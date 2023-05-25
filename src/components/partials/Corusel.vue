@@ -5,13 +5,14 @@
                 v-for="item in corusel_data"
                 :key="item.id"
                 :corusel_item="item"
+                :prefix="this.prefix"
             >
             </CoruselItem>
         </div>
         <div class="wrapper__btns-block">
             <div
                 class="wrapper__btn"
-                :id="'eComerce-slide_' + item.id"
+                :id="prefix + '-slide_' + item.id"
                 @click="GoToSlide(item.id)"
                 v-for="item in corusel_data"
                 :key="item.id"
@@ -38,14 +39,18 @@ export default {
         corusel_data: {
             type: Array,
             default: () => []
+        },
+        prefix: {
+            type: String,
+            default: 'eComerce'
         }
     },
     methods: {
         GoToSlide(id) {
             this.prevIndex = this.currentSlideIndex;
             this.currentSlideIndex = id - 1;
-            document.getElementById(`eComerce-slide_${id}`).classList.add("active");
-            if(this.prevIndex !== this.currentSlideIndex) document.getElementById(`eComerce-slide_${this.prevIndex + 1}`).classList.remove("active");
+            document.getElementById(`${this.prefix}-slide_${id}`).classList.add("active");
+            if(this.prevIndex !== this.currentSlideIndex) document.getElementById(`${this.prefix}-slide_${this.prevIndex + 1}`).classList.remove("active");
         }
     }
 }
@@ -57,6 +62,8 @@ export default {
 .wrapper {
     max-width: 500px;
     overflow: hidden;
+    position: relative;
+    z-index: 3;
 
     @media(max-width: 1200px) {
         max-width: 400px;

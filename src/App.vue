@@ -104,6 +104,9 @@
   <red-circle></red-circle>
   <HeaderSection></HeaderSection>
   <eComerce></eComerce>
+  <LandingPage></LandingPage>
+  <Corporate></Corporate>
+  <WhoWeAre></WhoWeAre>
 </template>
 
 <script>
@@ -111,6 +114,9 @@ import HeaderSection from './components/HeaderSection.vue';
 import RedCircle from './components/partials/RedCircle.vue';
 import LoadingScreen from './components/partials/LoadingScreen.vue';
 import eComerce from './components/eComerce.vue';
+import LandingPage from './components/LandingPage.vue';
+import Corporate from './components/Corporate.vue';
+import WhoWeAre from './components/WhoWeAre.vue';
 
 
 export default {
@@ -119,7 +125,10 @@ export default {
     LoadingScreen,
     HeaderSection,
     RedCircle,
-	eComerce
+    LandingPage,
+    eComerce,
+    Corporate,
+    WhoWeAre
   },
   data() {
     return {
@@ -196,6 +205,15 @@ body {
 
 .fz-20 {
   font-size: 20px;
+}
+
+.scroll-reveal-block {
+  opacity: 0;
+  transition: 2s all ease;
+}
+
+.scroll-reveal-block.visible {
+  opacity: 1;
 }
 
 .menu,
@@ -305,6 +323,86 @@ body {
         z-index: 5;
         transition: all .6s;
     }
+}
+
+.information {
+    padding-top: 100px;
+    background: #171717;
+    position: relative;
+    z-index: 1;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    &__slider-block,
+    &__text-block {
+        width: 50%;
+    }
+
+    &__text-block {
+      z-index: 3;
+    }
+
+    &__slider-block {
+      position: relative;
+    }
+
+    &__title {
+        font-size: 4vw;
+        font-weight: 700;
+        white-space: nowrap;
+        margin-bottom: 1rem;
+    }
+
+    &__text {
+        color: #c3c1c1;
+        margin-bottom: 1rem;
+    }
+
+    &__link {
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        color: #EB3846;
+
+        &:hover {
+          color: #EB3846;
+          text-shadow: 0 0 25px rgba(235,56,70,.7);
+        }
+    }
+}
+
+.circle-left {
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-image: url(./assets/circle.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+    width: 500px;
+    height: 500px;
+    top: -14%;
+  }
+}
+
+.circle-right {
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-image: url(./assets/circle.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+    width: 500px;
+    height: 500px;
+    top: -14%;
+    z-index: 2;
+  }
 }
 
 </style>

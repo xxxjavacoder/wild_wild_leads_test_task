@@ -12,10 +12,14 @@ export default {
         corusel_item: {
             type: Object,
             default: () => {}
+        },
+        prefix: {
+            type: String,
+            default: "eComerce"
         }
     },
     mounted() {
-        document.getElementById(`eComerce-slide_1`).classList.add("active");
+        document.getElementById(`${this.prefix}-slide_1`).classList.add("active");
     }
 }
 

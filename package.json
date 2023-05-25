@@ -12,7 +12,9 @@
     "bootstrap": "^5.2.3",
     "bootstrap-vue": "^2.23.1",
     "core-js": "^3.8.3",
+    "scrollreveal": "^4.0.9",
     "vue": "^3.2.13",
+    "vue-scroll-reveal": "github:tserkov/vue-scroll-reveal#v2",
     "vue-slick": "^1.2.0",
     "vue-slick-carousel": "^1.0.6",
     "vue3-carousel": "^0.3.1"

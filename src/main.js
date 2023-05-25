@@ -42,3 +42,56 @@ close_social.addEventListener('click', () => {
     social_modal.classList.remove('active');
 })
     
+let prevScrollPos = window.pageYOffset;
+let isScrollingUp = false;
+let revealTimeout;
+
+window.addEventListener('scroll', revealBlocksOnScroll);
+
+function revealBlocksOnScroll() {
+  const currentScrollPos = window.pageYOffset;
+  isScrollingUp = currentScrollPos < prevScrollPos;
+  prevScrollPos = currentScrollPos;
+
+  clearTimeout(revealTimeout);
+
+  const blocks = document.getElementsByClassName('scroll-reveal-block');
+
+  for (let i = 0; i < blocks.length; i++) {
+    const block = blocks[i];
+    const blockTop = block.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (isScrollingUp) {
+      // Ховаємо блок, якщо користувач прокручує назад
+      if (blockTop < windowHeight) {
+        block.classList.remove('visible');
+      }
+    } else {
+      // Показуємо блок, якщо користувач докрутив до нього
+      if (blockTop < windowHeight) {
+        block.classList.add('visible');
+      }
+    }
+  }
+
+  // Запускаємо таймаут для затримки ховання блоків при прокрутці вгору
+  if (isScrollingUp) {
+    revealTimeout = setTimeout(hideBlocks, 300);
+  }
+}
+
+function hideBlocks() {
+  const blocks = document.getElementsByClassName('scroll-reveal-block');
+
+  for (let i = 0; i < blocks.length; i++) {
+    const block = blocks[i];
+    const blockTop = block.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    // Показуємо блок, якщо користувач знову доскролив до нього
+    if (blockTop < windowHeight) {
+      block.classList.add('visible');
+    }
+  }
+}
