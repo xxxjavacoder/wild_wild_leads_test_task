@@ -63,19 +63,16 @@ function revealBlocksOnScroll() {
     const windowHeight = window.innerHeight;
 
     if (isScrollingUp) {
-      // Ховаємо блок, якщо користувач прокручує назад
       if (blockTop < windowHeight) {
         block.classList.remove('visible');
       }
     } else {
-      // Показуємо блок, якщо користувач докрутив до нього
       if (blockTop < windowHeight) {
         block.classList.add('visible');
       }
     }
   }
 
-  // Запускаємо таймаут для затримки ховання блоків при прокрутці вгору
   if (isScrollingUp) {
     revealTimeout = setTimeout(hideBlocks, 300);
   }
@@ -89,7 +86,6 @@ function hideBlocks() {
     const blockTop = block.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
 
-    // Показуємо блок, якщо користувач знову доскролив до нього
     if (blockTop < windowHeight) {
       block.classList.add('visible');
     }

@@ -27,7 +27,7 @@
   .loading-line {
     position: absolute;
     top: 50%;
-    left: 37%;
+    left: 40%;
     height: 10px;
     background-color: #eb3846;
     animation: load 3s linear;

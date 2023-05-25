@@ -42,7 +42,7 @@
     background-color: #eb3846;
     position: absolute;
     pointer-events: none;
-    transition: 0.5s ease;
+    transition: 0.1s linear;
     z-index: 1000;
   }
 

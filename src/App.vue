@@ -174,9 +174,11 @@ body {
 
 .center-text {
 	display: block;
+  position: relative;
 	font-size: 30px;
 	line-height: 44px;
 	padding: 4rem 0;
+  z-index: 3;
 }
 
 .color-white {
